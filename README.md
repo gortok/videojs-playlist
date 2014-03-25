@@ -1,3 +1,11 @@
+> This Fork of the Video.js playlist plugin by [http://tim-peterson.github.io](Tim Peterson) fixes a few issues:
+
+ - Updates the playlist plugin for the latest version of video.js (4.2.2 as of this writing).
+ - Has the playlist functionality 'work' for HTML5 playlists
+
+ ###Known Issues
+ Does not work with RTMP streaming for multiple flash videos. It handles one correctly, but the others are not handled correctly. I don't currently know why that is.
+
 Video.js playlist
 ===================
 A video-js plugin to play multiple videos or multiple audio tracks . It is [one of a growing number of plugins](https://github.com/videojs/video.js/wiki/Plugins) for the awesome [video-js library](https://github.com/videojs/video.js)
