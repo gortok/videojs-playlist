@@ -64,7 +64,7 @@
           ]);         
         }
         else{
-            if(player.L.hasOwnProperty("tagName") && player.L.tagName=="AUDIO" || (typeof options.mediaType!='undefined' && options.mediaType=="audio") ){
+            if( player.L != 'undefined' && player.L !== null && player.L.hasOwnProperty("tagName") && player.L.tagName=="AUDIO" || (typeof options.mediaType!='undefined' && options.mediaType=="audio") ){
             player.src([
                 { type: "audio/mp4", src:  src+".m4a" },
                 { type: "audio/webm", src: src+".webm" },
@@ -73,16 +73,18 @@
                 { type: "audio/ogg", src: src+".oga" }*/
              ]);            
             }
-            else if (player.a.tagName.childNodes[0].tagName == "object") {
+            else if (player.a.childNodes[0].tagName == "OBJECT") {
               console.log("flash");
+              var ext = src.substr(src.indexOf("&"), 4);
+              ext = ext.replace('&','');
               player.src([{
-                type: "rtmp/" + src.substr(src.length - 3), src: src
+                type: "rtmp/" + ext, src: src
               }]);
             }
             else {
             console.log("video");
               player.src([
-                { type: "video/mp4", src:  src },
+                { type: "video/mp4", src:  src  },
                 { type: "video/webm", src: src },
                 { type: "video/ogv", src: src }
               ]);                     
