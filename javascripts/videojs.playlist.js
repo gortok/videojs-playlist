@@ -75,10 +75,11 @@
             }
             else if (player.a.childNodes[0].tagName == "OBJECT") {
               console.log("flash");
-              var ext = src.substr(src.indexOf("&"), 4);
-              ext = ext.replace('&','');
+              //{type: 'rtmp/mp4', src: 'rtmp://s12345.cloudfront.net/cfx/st,mp4:video.mp4'}
+              var ext = src.substr(src.indexOf('&'), 4);
+              ext = ext.replace('&', '.');
               player.src([{
-                type: "rtmp/" + ext, src: src
+                type: "rtmp/" + ext.replace('.', ''), src: src + ext
               }]);
             }
             else {
